@@ -1,42 +1,43 @@
-# Zomato-Data-Analysis-SQL
-SQL-based analysis of Zomato data focusing on customer behavior, sales performance, and restaurant trends using advanced Joins and Subqueries.
+# 🍴 Zomato Data Analysis (SQL Case Study)
 
-# 🍴 Zomato Data Analysis (SQL)
+## 📌 Project Overview
+This project involves a deep-dive analysis of Zomato's customer behavior and sales data. Using advanced SQL techniques, I answered 12 critical business questions to derive insights into customer loyalty, product performance, and membership impact.
 
-## 📌 Project Objective
-To extract meaningful insights from Zomato's restaurant and delivery data to understand customer ordering habits and business growth.
+## 🛠️ Database Schema
+The analysis is performed across four primary tables:
+* **Gold Users:** Membership signup details.
+* **Users:** General user signup dates.
+* **Sales:** Transactional data including purchase dates and product IDs.
+* **Product:** Menu details with pricing.
 
-## 🛠️ SQL Techniques Used
-* **Joins:** Combining customer, orders, and restaurant tables.
-* **Window Functions:** Calculating running totals and customer ranking.
-* **Aggregations:** Analyzing average order value and total revenue.
-* **CTEs & Subqueries:** Organizing complex logic for multi-step analysis.
+---
 
-## 🔍 Key Business Questions Answered
-Part 1: Basic & Intermediate Queries
-Total Spending: What is the total amount each customer has spent on Zomato?
+## 🔍 Business Questions Answered
 
-Visit Frequency: How many distinct days has each customer visited the platform?
+### **Phase 1: Sales & Customer Behavior**
+1. **Total Spending:** What is the total amount each customer spent on Zomato?
+2. **Visit Frequency:** How many days has each customer visited Zomato?
+3. **First Purchase:** What was the first product purchased by each customer?
+4. **Popularity:** What is the most purchased item on the menu and how many times was it purchased by all customers?
+5. **Customer Favorites:** Which item was the most popular for each individual customer?
 
-First Purchase: What was the very first product purchased by each customer?
+### **Phase 2: Gold Membership Insights**
+6. **Member Onboarding:** Which item was purchased by the customer immediately after they became a Gold member?
+7. **Pre-Member Behavior:** Which item was purchased by the customer just before they became a member?
+8. **Pre-Member Totals:** What were the total orders and amount spent for each member before they joined the Gold program?
+9. **Loyalty Points System:** * Calculate points collected by each customer based on product-specific rules (e.g., P1: 5rs = 1pt, P2: 10rs = 5pts).
+    * Which product has generated the most points so far?
+10. **Bonus Period Analysis:** In the first year of Gold membership, users earn 5 points for every 10rs spent. Who earned the most during this "bonus" year?
 
-Most Popular Menu Item: What is the most purchased item on the entire menu, and how many times was it bought by all customers?
+### **Phase 3: Transactional Ranking**
+11. **Standard Ranking:** Rank all transactions for every customer based on date.
+12. **Member-Only Ranking:** Rank transactions for Gold members specifically, while marking non-member transactions as 'NA'.
 
-Customer Preference: Which specific item was the most popular for each individual customer?
+---
 
-Part 2: Advanced Member Analysis
-Post-Membership Activity: Which item was the first one purchased by a customer after they became a Gold member?
-
-Pre-Membership Activity: Which item was the last one purchased by a customer just before they became a Gold member?
-
-Pre-Membership Totals: What were the total orders and total amount spent for each member before they joined the Gold program?
-
-Reward Points System: * Calculate the total points collected by each customer based on specific product rules (e.g., P1: 5rs = 1pt, P2: 10rs = 5pts, P3: 5rs = 1pt).
-
-Identify which specific product has yielded the most total points so far.
-
-First-Year Gold Bonus: In their first year after joining Gold, members earn 5 points for every 10rs spent. Who earned the most in their first year, and what was that total?
-
-Transaction Ranking: Rank all transactions for every customer based on their purchase date.
-
-Member Transaction Logic: Rank all transactions for each member, but for any transactions made by non-gold members (or before gold signup), mark the rank as "NA."
+## 🚀 Technical Skills Demonstrated
+* **Joins:** Inner and Left Joins to connect sales with user and product data.
+* **Window Functions:** `RANK()` and `DENSE_RANK()` for transaction sequencing.
+* **Aggregations:** `SUM()`, `COUNT()`, and `GROUP BY` for financial reporting.
+* **Conditional Logic:** `CASE WHEN` statements for custom loyalty point calculations.
+* **CTEs & Subqueries:** Organizing complex multi-step queries for better readability.
