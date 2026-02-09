@@ -13,15 +13,30 @@ To extract meaningful insights from Zomato's restaurant and delivery data to und
 * **CTEs & Subqueries:** Organizing complex logic for multi-step analysis.
 
 ## 🔍 Key Business Questions Answered
-1. What is the total amount each customer spent on Zomato?
-2. How many days has each customer visited the platform?
-3. What was the first product purchased by each customer?
-4. What is the most purchased item on the menu?
+Part 1: Basic & Intermediate Queries
+Total Spending: What is the total amount each customer has spent on Zomato?
 
-## 📊 Sample Query Preview
-```sql
--- Example: Finding total sales per customer
-SELECT userid, SUM(price) as total_spent
-FROM sales s
-JOIN product p ON s.product_id = p.product_id
-GROUP BY userid;
+Visit Frequency: How many distinct days has each customer visited the platform?
+
+First Purchase: What was the very first product purchased by each customer?
+
+Most Popular Menu Item: What is the most purchased item on the entire menu, and how many times was it bought by all customers?
+
+Customer Preference: Which specific item was the most popular for each individual customer?
+
+Part 2: Advanced Member Analysis
+Post-Membership Activity: Which item was the first one purchased by a customer after they became a Gold member?
+
+Pre-Membership Activity: Which item was the last one purchased by a customer just before they became a Gold member?
+
+Pre-Membership Totals: What were the total orders and total amount spent for each member before they joined the Gold program?
+
+Reward Points System: * Calculate the total points collected by each customer based on specific product rules (e.g., P1: 5rs = 1pt, P2: 10rs = 5pts, P3: 5rs = 1pt).
+
+Identify which specific product has yielded the most total points so far.
+
+First-Year Gold Bonus: In their first year after joining Gold, members earn 5 points for every 10rs spent. Who earned the most in their first year, and what was that total?
+
+Transaction Ranking: Rank all transactions for every customer based on their purchase date.
+
+Member Transaction Logic: Rank all transactions for each member, but for any transactions made by non-gold members (or before gold signup), mark the rank as "NA."
